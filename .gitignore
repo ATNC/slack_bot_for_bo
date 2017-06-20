@@ -1,7 +1,7 @@
 env
-credentials.py
+credentials/
 *.pyc
 
 .idea/
-
+db
 results
