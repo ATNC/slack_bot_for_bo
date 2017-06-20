@@ -1,19 +1,16 @@
 import os
 import slackclient
 import time
-from db import DB
+from db import db
+from credentials import SLACK_API_KEY, SLACK_BOT_ID
 
-
-API_KEY = os.environ.get('SLACK_API_KEY')
-SLACK_BOT_ID = os.environ.get('SLACK_BOT_ID')
 
 SOCKET_DELAY = 1
 
 STATS_COMMANDS = ['much']
 SUM_COMMANDS = ['sum']
-client = slackclient.SlackClient(API_KEY)
+client = slackclient.SlackClient(SLACK_API_KEY)
 
-db = DB()
 bot_name_in_public = f'<@{SLACK_BOT_ID}>'
 
 

@@ -1,5 +1,5 @@
 env
-
+credentials.py
 *.pyc
 
 .idea/

@@ -1,10 +1,10 @@
-import os
 import csv
+import os
 import six
 from datetime import datetime
-from singletone import MetaSingleton
 from mysql import connector
-
+from .singleton import MetaSingleton
+from credentials import DB_HOST, DB_NAME, DB_PWD, DB_USER
 
 if not os.path.exists('results'):
     os.makedirs('results')
@@ -14,8 +14,8 @@ if not os.path.exists('results'):
 class DB:
     def __init__(self):
         self._db = connector.connect(
-            user=os.environ.get('DB_USER'), passwd=os.environ.get('DB_PWD'),
-            database=os.environ.get('DB_NAME'), host=os.environ.get('DB_HOST')
+            user=DB_USER, passwd=DB_PWD,
+            database=DB_NAME, host=DB_HOST
         )
 
     @property
